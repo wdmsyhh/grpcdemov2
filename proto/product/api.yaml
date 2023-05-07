@@ -1,0 +1,10 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: grpcdemov2.product.ProductService.GetProduct
+      get: /v2/products/{id}
+      additional_bindings:
+        - post: /v2/product/get
+          body: "*"
